@@ -11,7 +11,6 @@ import { MatSortModule } from '@angular/material/sort';
 import {MatIconModule} from '@angular/material/icon';
 import {MatButtonModule} from '@angular/material/button';
 
-
 @NgModule({
   declarations: [PopularMovieComponent],
   imports: [

@@ -16,12 +16,12 @@ export class ExchangeDataService {
   collection: BehaviorSubject<MovieDetails> = new BehaviorSubject<MovieDetails>(this.emptyCollection);
   currentCollection = this.collection.asObservable();
 
-  initializeMovieDetails(): void {
-    this.getMovieDetails().subscribe(val => this.collection.next(val));
+  initializeMovieDetails(details: MovieDetails): void {
+    this.collection.next(details);
   }
 
   changeToLeftCollection(): void{
-    if (this.movieId > 0) {
+    if (this.movieId > 1) {
       this.movieId--;
       this.getMovieDetails().subscribe(val => this.collection.next(val));
     }

@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import {ActivatedRoute, Router} from '@angular/router';
 import {FetchDataService} from '../../services/fetch-data.service';
-import {OneMovie, PopularMovie} from '../../model/popular-movie';
+import { PopularMovie} from '../../model/popular-movie';
+import {Movie} from '../../../appModule/models/movie';
 
 @Component({
   selector: 'app-popular-movie',
@@ -10,19 +11,18 @@ import {OneMovie, PopularMovie} from '../../model/popular-movie';
 })
 export class PopularMovieComponent implements OnInit {
   popular: PopularMovie;
-  movies: OneMovie[];
+  movies: Movie[];
   page: number;
   constructor(private activatedRoute: ActivatedRoute,
               private fetchData: FetchDataService,
-              private router: Router
-              ) { }
+              private router: Router) { }
 
   ngOnInit(): void {
     this.activatedRoute.data.subscribe(value => this.popular = value.popular);
     this.fetchData.initializeMovieDetails(this.popular);
-    this.fetchData.currentPage$.subscribe(va => {
-      this.movies = va.results;
-      this.page = va.page;
+    this.fetchData.currentPage$.subscribe(value => {
+      this.movies = value.results;
+      this.page = value.page;
     });
   }
 

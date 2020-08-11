@@ -16,18 +16,20 @@ export class FetchDataService {
   page: BehaviorSubject<PopularMovie> = new BehaviorSubject<PopularMovie>(this.emptyValue);
   currentPage$ = this.page.asObservable();
 
-  initializeMovieDetails(value: any): void {
-    this.page.next(value);
+  initializeMovieDetails(movie: PopularMovie): void {
+    this.page.next(movie);
   }
 
-  nextPage(): any {
+  nextPage(): void {
     this.whichPage++;
     this.getPopular().subscribe(val => this.page.next(val));
   }
 
-  prevPage(): any {
-    this.whichPage--;
-    this.getPopular().subscribe(val => this.page.next(val));
+  prevPage(): void {
+    if (this.whichPage > 0) {
+      this.whichPage--;
+      this.getPopular().subscribe(val => this.page.next(val));
+    }
   }
 
   getPopular(): Observable<PopularMovie> {

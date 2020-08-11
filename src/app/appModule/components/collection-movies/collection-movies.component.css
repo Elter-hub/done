@@ -1,6 +1,6 @@
 .wholeCard {
   text-align: center;
-  height: 90vh;
+  height: 85vh;
   background-repeat: round;
   display: flex;
 }
@@ -20,7 +20,7 @@ cdk-virtual-scroll-viewport {
 
 .description {
   position: relative;
-  top: 25vh;
+  top: 15vh;
   display: inline;
   height: max-content;
   background: #424242;

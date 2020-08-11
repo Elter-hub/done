@@ -1,4 +1,4 @@
-import {ChangeDetectionStrategy, Component, OnInit} from '@angular/core';
+import { Component, OnInit} from '@angular/core';
 import {Genres, Movie, MovieDetails} from '../../models/movie';
 import {ActivatedRoute, Router} from '@angular/router';
 import {ExchangeDataService} from '../../services/exchange-data.service';
@@ -20,7 +20,7 @@ export class CollectionMoviesComponent implements OnInit {
 
   ngOnInit(): void {
     this.activatedRoute.data.subscribe(value => this.movieDetails = value.collection);
-    this.exchangeData.initializeMovieDetails();
+    this.exchangeData.initializeMovieDetails(this.movieDetails);
     this.exchangeData.currentCollection.subscribe(val => this.movieDetails = val);
   }
 

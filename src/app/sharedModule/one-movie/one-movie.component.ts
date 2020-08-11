@@ -12,7 +12,7 @@ import {ActivatedRoute} from '@angular/router';
       transition('* => *', [
         query(':self', stagger('200ms', [
           animate('0.8s ease-in', keyframes([
-            style({opacity: 0.3, transform: 'translateX(-25%)', offset: 0}),
+            style({opacity: 0.3, transform: 'translateX(35%)', offset: 0}),
             style({opacity: 1, transform: 'translateX(0%)', offset: 1}),
           ]))
         ]))
