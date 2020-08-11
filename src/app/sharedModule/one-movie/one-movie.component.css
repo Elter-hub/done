@@ -1,0 +1,25 @@
+.example-card {
+  display: flex;
+  overflow: auto;
+  margin-bottom: 10px;
+
+}
+
+.mat-card-actions, .mat-card-subtitle, .mat-card-content {
+  margin: 0;
+}
+
+mat-card-subtitle {
+  left: 0;
+}
+
+.linearGradient {
+  background: linear-gradient(to left, #69f0ae 0%, #673ab7 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-weight: bold;
+}
+
+.overflow {
+  overflow: auto;
+}

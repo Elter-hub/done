@@ -1,0 +1,7 @@
+<button mat-raised-button  (click)="previousPage()">
+  <mat-icon color="accent">chevron_left</mat-icon>Previous
+</button>
+<button mat-raised-button (click)="nextPage()">Next
+  <mat-icon color="accent">chevron_right</mat-icon>
+</button>
+<app-one-movie *ngFor="let movie of movies" [movie]="movie" ></app-one-movie>

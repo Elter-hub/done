@@ -1,0 +1,24 @@
+<div class="buttons">
+  <button mat-raised-button  (click)="decrementId(movieDetails.id)">
+    <mat-icon color="accent">chevron_left</mat-icon>Previous
+  </button>
+  <button mat-raised-button (click)="incrementId(movieDetails.id)">Next
+    <mat-icon color="accent">chevron_right</mat-icon>
+  </button>
+</div>
+<div class="wholeCard"
+     [ngStyle]="{'background-image': 'url(https://image.tmdb.org/t/p/original' + movieDetails.poster_path + ')'}">
+  <div class="description">
+   <div class="describeCollection">{{movieDetails.name}}</div>
+   <div class="overView">{{movieDetails.description}}</div>
+  </div>
+    <div class="moviesContainer" >
+      <cdk-virtual-scroll-viewport itemSize="100px" >
+          <app-one-movie  *ngFor="let movie of movieDetails.items"  [movie]="movie"></app-one-movie>
+      </cdk-virtual-scroll-viewport>
+    </div>
+</div>
+
+
+
+
