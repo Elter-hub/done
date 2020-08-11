@@ -18,12 +18,15 @@ import {CommonModule} from '@angular/common';
 import {ScrollingModule} from '@angular/cdk/scrolling';
 import {MatRippleModule} from '@angular/material/core';
 import {SharedModule} from '../sharedModule/shared.module';
+import { MatDialogModule } from '@angular/material/dialog';
 
 @NgModule({
   declarations: [
     AppComponent,
     CollectionMoviesComponent,
     NavigationComponent,
+
+
   ],
   imports: [
     BrowserModule,
@@ -40,7 +43,8 @@ import {SharedModule} from '../sharedModule/shared.module';
     MatCardModule,
     ScrollingModule,
     MatRippleModule,
-    SharedModule
+    SharedModule,
+    MatDialogModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -13,6 +13,12 @@ const routes: Routes = [
       },
       {
         path: 'popular/:id', loadChildren: () => import('./../popularModule/popular.module').then(m => m.PopularModule)
+      },
+      {
+        path: 'topRated/:id', loadChildren: () => import('./../topRatedModule/top-rated.module').then(m => m.TopRatedModule)
+      },
+      {
+        path: 'movie/:id', loadChildren: () => import('./../video-module/video-module.module').then(m => m.VideoModuleModule)
       }
     ]}];
 

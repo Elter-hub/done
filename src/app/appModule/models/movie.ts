@@ -9,6 +9,7 @@ export interface Movie {
   vote_average: number;
   vote_count: number;
   genre_ids: number[];
+  id: number;
 }
 
 export interface MovieDetails {

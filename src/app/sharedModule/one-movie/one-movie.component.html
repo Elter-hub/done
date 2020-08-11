@@ -1,11 +1,13 @@
-<mat-card class="example-card" mat-ripple style="cursor: pointer" [@movieAnimation]="movie">
+<mat-card class="example-card" mat-ripple style="cursor: pointer"
+          [@movieAnimation]="movie" (click)="openDialog(movie.id)">
   <img mat-card-lg-image [src]="'https://image.tmdb.org/t/p/original' + movie.backdrop_path" alt="movie">
   <div class="overflow">
     <mat-card-header>
       <h2 class="linearGradient">{{movie.title}}</h2>
     </mat-card-header>
     <h2 class="linearGradient">{{genres}}</h2>
-    <mat-card-content>{{movie.release_date | slice:0:4}}, Rating: {{movie.vote_average}}</mat-card-content>
+    <mat-card-content>Рік:{{movie.release_date | slice:0:4}}, Рейтинг: {{movie.vote_average}}</mat-card-content>
     <mat-card-content class="linearGradient">{{movie.overview}}</mat-card-content>
   </div>
 </mat-card>
+

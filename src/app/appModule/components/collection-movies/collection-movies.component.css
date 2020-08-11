@@ -1,5 +1,4 @@
 .wholeCard {
-  text-align: center;
   height: 85vh;
   background-repeat: round;
   display: flex;
@@ -44,6 +43,3 @@ cdk-virtual-scroll-viewport {
   -webkit-text-fill-color: transparent;
 }
 
-.buttons {
-  text-align: center;
-}

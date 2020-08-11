@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {ActivatedRoute, Router} from '@angular/router';
 import {FetchDataService} from '../../services/fetch-data.service';
-import { PopularMovie} from '../../model/popular-movie';
+import {Movies } from '../../model/popular-movie';
 import {Movie} from '../../../appModule/models/movie';
 
 @Component({
@@ -10,7 +10,7 @@ import {Movie} from '../../../appModule/models/movie';
   styleUrls: ['./popular-movie.component.css']
 })
 export class PopularMovieComponent implements OnInit {
-  popular: PopularMovie;
+  popular: Movies;
   movies: Movie[];
   page: number;
   constructor(private activatedRoute: ActivatedRoute,

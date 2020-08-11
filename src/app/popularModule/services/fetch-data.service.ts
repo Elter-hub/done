@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import {HttpClient} from '@angular/common/http';
 import {BehaviorSubject, Observable} from 'rxjs';
-import { PopularMovie} from '../model/popular-movie';
+import { Movies} from '../model/popular-movie';
 
 @Injectable({
   providedIn: 'root'
@@ -9,14 +9,14 @@ import { PopularMovie} from '../model/popular-movie';
 export class FetchDataService {
   private API_KEY = 'd35a36cc38b2607b53b0f8c6d1c4fde8';
   whichPage = 1;
-  emptyValue: PopularMovie;
+  emptyValue: Movies;
 
   constructor(private httpClient: HttpClient) { }
 
-  page: BehaviorSubject<PopularMovie> = new BehaviorSubject<PopularMovie>(this.emptyValue);
+  page: BehaviorSubject<Movies> = new BehaviorSubject<Movies>(this.emptyValue);
   currentPage$ = this.page.asObservable();
 
-  initializeMovieDetails(movie: PopularMovie): void {
+  initializeMovieDetails(movie: Movies): void {
     this.page.next(movie);
   }
 
@@ -32,7 +32,7 @@ export class FetchDataService {
     }
   }
 
-  getPopular(): Observable<PopularMovie> {
-    return this.httpClient.get<PopularMovie>(`https://api.themoviedb.org/3/movie/popular?api_key=${this.API_KEY}&language=uk-UA&page=${this.whichPage}`)
+  getPopular(): Observable<Movies> {
+    return this.httpClient.get<Movies>(`https://api.themoviedb.org/3/movie/popular?api_key=${this.API_KEY}&language=uk-UA&page=${this.whichPage}`)
   }
 }
